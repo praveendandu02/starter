@@ -76,6 +76,18 @@ return {
     },
   },
 
+  -- add blink
+  {
+    "blink.nvim", -- replace with the actual plugin name if different
+    opts = {
+      cmp = {
+        fuzzy = {
+          implementation = "lua", -- or "prefer_rust"
+        },
+      },
+    },
+  },
+
   -- add tsserver and setup with typescript.nvim instead of lspconfig
   {
     "neovim/nvim-lspconfig",
@@ -120,6 +132,8 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "hcl",
+        "terraform",
         "bash",
         "html",
         "javascript",
@@ -193,5 +207,24 @@ return {
         "flake8",
       },
     },
+  },
+
+  {
+    "williamboman/mason-lspconfig.nvim",
+    version = "v1.29.0", -- pin Mason LSPConfig to stable version
+    -- you can add opts/config if you use them
+  },
+
+  {
+    "neovim/nvim-lspconfig",
+    version = "v0.1.7", -- pin LSPConfig to stable version
+    -- your existing opts/config go here
+  },
+
+  -- (Optional) Pin LazyVim core
+  {
+    "LazyVim/LazyVim",
+    version = "v0.10.0", -- example version, check for latest stable
+    -- your opts as needed
   },
 }
